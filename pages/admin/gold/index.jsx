@@ -75,10 +75,10 @@ export default function GoldPrice({ goldPrices }) {
 }
 
 export async function getServerSideProps({ req, res }) {
-  const { data } = await getGoldPrices();
+  const goldRes = await getGoldPrices();
   return {
     props: {
-      goldPrices: data,
+      goldPrices: goldRes?.data ?? [],
     },
   };
 }
