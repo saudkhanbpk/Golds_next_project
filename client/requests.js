@@ -93,7 +93,7 @@ export const getSpecificGoldPrice = async (type, trade) => {
     const res = await axios.get(`${BASE_URL}/api/gold/${type}/${trade}`);
     return res;
   } catch (err) {
-    return res.response;
+    return err.response;
   }
 };
 
@@ -111,7 +111,7 @@ export const getAccounts = async () => {
     const res = await axios.get(`${BASE_URL}/api/accounts/`);
     return res;
   } catch (err) {
-    return res.response;
+    return err.response;
   }
 };
 
@@ -120,7 +120,7 @@ export const getAccount = async (id) => {
     const res = await axios.get(`${BASE_URL}/api/accounts/${id}`);
     return res;
   } catch (err) {
-    return res.response;
+    return err.response;
   }
 };
 
