@@ -68,10 +68,10 @@ export default function AccountId({ account }) {
 
 export async function getServerSideProps(ctx) {
   const id = ctx?.params.accountId;
-  const { data } = await getAccount(id);
+  const accountRes = await getAccount(id);
   return {
     props: {
-      account: data,
+      account: accountRes?.data ?? [],
     },
   };
 }
