@@ -74,10 +74,10 @@ export default function Account({ accounts }) {
 }
 
 export async function getServerSideProps({ req, res }) {
-  const { data } = await getAccounts();
+  const accountRes = await getAccounts();
   return {
     props: {
-      accounts: data,
+      accounts: accountRes?.data ?? [],
     },
   };
 }
