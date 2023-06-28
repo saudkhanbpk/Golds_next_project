@@ -69,10 +69,10 @@ export default function Review({ reviews }) {
 }
 
 export async function getServerSideProps() {
-  const { data } = await getReviews();
+  const reviewRes = await getReviews();
   return {
     props: {
-      reviews: data,
+      reviews: reviewRes?.data ?? [],
     },
   };
 }
