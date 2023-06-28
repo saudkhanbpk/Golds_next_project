@@ -73,10 +73,10 @@ export default function BlogAd({ posts }) {
 }
 
 export async function getServerSideProps({ req, res }) {
-  const { data } = await getPosts();
+  const blogRes = await getPosts();
   return {
     props: {
-      posts: data,
+      posts: blogRes?.data ?? [],
     },
   };
 }
